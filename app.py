@@ -24,7 +24,6 @@ def upload():
     file = form.file.data #first grab the file
     file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(file.filename))) # then save the file
     return 'File has been uploaded'
-  
   return render_template("upload.html", form=form)
 
 # @app.route("/greet")

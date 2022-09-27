@@ -4,16 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- css link -->
-  <link rel="stylesheet" href="main.css">
-  <title>upload - FILES DEVIDER</title>
+  <title>upload files</title>
 </head>
 <body>
-  <h3>form upload testing</h3>
-<form enctype="multipart/form-data" action="/upload" method="post">
-  {{form.hidden_tag()}}
-  {{form.file()}}
-  {{form.submit()}}
-</form>
+  <h2>upload files</h2>
+  <form action="/upload result" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file"/>
+    <input type="submit" value="upload">
+  </form>
 </body>
 </html>

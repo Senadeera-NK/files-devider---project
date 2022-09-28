@@ -11,10 +11,11 @@
 <body>
   <h2>upload files</h2>
   <form action="/upload result" method="POST" enctype="multipart/form-data">
-    <input type="file" name="file"/>
+    <input type="file" name="file" id="media"/>
     <input type="submit" value="upload" onclick="update()">
   </form>
-  <div id="Progress_status">
+  <br>
+  <div id="Progress_Status">
     <div id="myprogressBar"></div>
   </div>
 </body>

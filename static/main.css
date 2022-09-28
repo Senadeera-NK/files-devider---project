@@ -1,19 +1,13 @@
-/* START PAGE -- CSS */
-
-/* UPLOAD PAGE -- CSS */
-
-/* UPLOADING PAGE -- CSS */
-
-/* DEVIDING PAGE -- CSS */
-
-/* FOLDERS OR ZIPS PAGE -- CSS */
-
-/* OUTPUT TYPE PAGE -- CSS */
-
-/* MAIL PAGE -- CSS */
-
-/* MAIL SENDING PAGE -- CSS */
-
-/* DOWNLOADING PAGE -- CSS */
-
-/* DONE PAGE -- CSS */
+body {
+  background-color: #4CAF50;
+}
+/* --- progress bar css --- */
+#Progress_Status {
+  width: 50%;
+  background-color: #ddd;
+}
+#myprogressBar {
+  width: 2%;
+  height: 20px;
+  background-color: #4CAF50;
+}

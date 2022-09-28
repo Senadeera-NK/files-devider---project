@@ -1,10 +1,10 @@
 function update() {
   var element = document.getElementById("myprogressBar");
   var width = 1;
-  var indetity = setInterval(scene, 10);
+  var identity = setInterval(scene, 10);
   function scene() {
-    if (width >= 10) {
-      clearInterval(indetity);
+    if (width >= 100) {
+      clearInterval(identity);
     }
     else {
       width++;

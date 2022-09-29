@@ -29,7 +29,7 @@ def upload_result():
       result = 'files failed to upload'
 
       # -- continue.......
-  return render_template('/', result=result)
+    return result
 
 
 if __name__ == "__main__":

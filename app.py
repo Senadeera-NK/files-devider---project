@@ -17,7 +17,7 @@ def allowed_files(filename):
 def upload():
   return render_template('upload.html')
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/upload result', methods=['GET', 'POST'])
 def upload_result():
   if request.method == 'POST':
     f = request.files['file']
@@ -29,7 +29,7 @@ def upload_result():
       result = 'files failed to upload'
 
       # -- continue.......
-    return result
+    return render_template('upload result.html', result=result)
 
 
 if __name__ == "__main__":

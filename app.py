@@ -27,7 +27,7 @@ def upload_result():
       result = 'files uploaded successfully !!!'
     else:
       result = 'files failed to upload'
-      
+
       # -- continue.......
   return render_template('/', result=result)
 

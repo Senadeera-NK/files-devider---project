@@ -10,16 +10,14 @@
 </head>
 <body>
   <h2>upload files</h2>
+  <div id="myProgress">
+    <div id="myBar">10%</div>
+  </div>
+  <br>
   <form action="/upload result" method="POST" enctype="multipart/form-data">
     <input type="file" name="file" id="media"/>
-    <input type="submit" value="upload" onclick="uploading()">
+    <input type="button" value="upload" onclick="move()">
+    <input type="submit" value="done">
   </form>
-  <br>
-
-  <div id="myprogress">
-    <div id="mybar"></div>
-  </div>
-
-  {{result}}
 </body>
 </html>

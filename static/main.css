@@ -1,10 +1,11 @@
 /* --- progress bar css --- */
-#Progress_Status {
+#myprogress{
   width: 50%;
-  background-color: #ddd;
+  background-color: grey;
 }
-#myprogressBar {
-  width: 2%;
-  height: 20px;
-  background-color: #4CAF50;
+
+#mybar{
+  width: 1%;
+  height: 30px;
+  background-color: green;
 }

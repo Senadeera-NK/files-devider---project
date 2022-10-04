@@ -19,8 +19,10 @@
     <input type="button" value="upload" onclick="move()">
     <input type="submit" value="done">
   </form>
-  {% for uf in uploaded_files %}
-  {{ uf }}
-  {% end for %}
+  <ul>
+    {% for uploaded_file in uploaded_files %}
+      <li>{{ uploaded_file }}</li>
+    {% endfor %}
+  </ul>
 </body>
 </html>

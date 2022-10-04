@@ -18,12 +18,12 @@ def allowed_files(filename):
 
 @app.route('/')
 def upload():
-  path='/static/files/'
-  uploaded_files = os.listdir(path)
+  uploaded_files = os.listdir('static/files/')
   # checking if the uploaded files' folder is empty
   files_len = len(uploaded_files)
   # if not empty
   if not files_len:
+    path='static/files/'
     #clearing all the existing files for a new session
     for filename in os.listdir(path):
       file = path+filename

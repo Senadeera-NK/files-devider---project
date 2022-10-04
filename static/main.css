@@ -1,3 +1,4 @@
+/* ------ upload.html ----- */
 /* --- progress bar css --- */
 #myProgress {
   width: 100%;
@@ -5,10 +6,16 @@
 }
 
 #myBar {
-  width: 10%;
+  width: 8%;
   height: 30px;
-  background-color: #04AA6D;
+  /* background-color: #04AA6D; */
+  background-color:rgb(24, 178, 58);
   text-align: center;
   line-height: 30px;
   color: white;
+}
+
+#file_names_list{
+  list-style-type: none;
+  color: rgb(23, 61, 101);
 }

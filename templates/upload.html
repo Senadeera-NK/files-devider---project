@@ -19,9 +19,9 @@
     <input type="button" value="upload" onclick="move()">
     <input type="submit" value="done">
   </form>
-  <ul>
+  <ul id="file_names_list">
     {% for uploaded_file in uploaded_files %}
-      <li>{{ uploaded_file }}</li>
+      <li>{{ uploaded_file }} <input type="reset" value="delete"></li>
     {% endfor %}
   </ul>
 </body>

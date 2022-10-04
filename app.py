@@ -36,7 +36,10 @@ def upload():
 def upload_result():
   if request.method == 'POST':
     f = request.files['file']
-    if allowed_files(f.filename):
+    # checking if the file's extension is allowed
+    if not allowed_files(f.filename):
+      app.logger.error('not a file with an allowed extension')
+    else:
       filename = secure_filename(f.filename)
 
       #getting the path of current folder

@@ -19,5 +19,8 @@
     <input type="button" value="upload" onclick="move()">
     <input type="submit" value="done">
   </form>
+  {% for uf in uploaded_files %}
+  {{ uf }}
+  {% end for %}
 </body>
 </html>

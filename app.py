@@ -28,8 +28,9 @@ def upload_result():
     else:
       result = 'files failed to upload'
 
-      # -- continue.......
-    return render_template('upload result.html', result=result)
+    # getting the names on the uploaded files
+    uploaded_files = os.listdir('static/files/')
+    return redirect('/', uploaded_files=uploaded_files)
 
 
 if __name__ == "__main__":

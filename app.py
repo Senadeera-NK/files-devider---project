@@ -4,6 +4,7 @@ from werkzeug.utils import secure_filename
 import os
 from os import listdir, path
 import logging # to print in console log
+import glob
 
 UPLOAD_FOLDER = 'static/files'
 ALLOWED_EXTENSIONS = ['txt', 'pdf', 'docs', 'docx']
@@ -23,13 +24,10 @@ def upload():
   files_len = len(uploaded_files)
   # if not empty
   if not files_len:
-    path='static/files/'
+    files = glob.glob('/static/files/*')
     #clearing all the existing files for a new session
-    for filename in os.listdir(path):
-      file = path+filename
-      if os.path.isfile(file):
-        app.logger.warning('Deleting file: ', file)
-        os.remove(file)
+    for f in files:
+      os.remove(f)
   return render_template('upload.html')
 
 @app.route('/upload result', methods=['GET', 'POST'])
@@ -41,11 +39,13 @@ def upload_result():
 
       # checking if that named file already in the folder
       file_exist = path.exists(filename)
+      logging.info(file_exist)
       if  file_exist != True:
         f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         # checking if the file uploaded successfully in folder
-        file_uploaded = path.exists(filename)
+        file_uploaded = os.path.isfile(f.filename)
+        app.logger.warning(file_uploaded)
         if file_uploaded != True:
           message = 'file uploading failed'
           app.logger.error(message)

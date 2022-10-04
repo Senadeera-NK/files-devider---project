@@ -37,21 +37,23 @@ def upload_result():
     if allowed_files(f.filename):
       filename = secure_filename(f.filename)
 
+      #getting the path of current folder
+      folder_path = os.path.abspath(os.getcwd())
+
       # checking if that named file already in the folder
-      file_exist = path.exists(filename)
-      logging.info(file_exist)
+      file_exist = os.path.exists(folder_path+'\\static\\files\\'+filename)
+
       if  file_exist != True:
         f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         # checking if the file uploaded successfully in folder
-        file_uploaded = os.path.isfile(f.filename)
-        app.logger.warning(file_uploaded)
+        file_uploaded = os.path.exists(folder_path+'\\static\\files\\'+filename)
+
         if file_uploaded != True:
           message = 'file uploading failed'
-          app.logger.error(message)
         else:
           message = 'file uploaded successfully'
-          app.logger.info(message)
+        app.logger.info(message)
       else:
         message = 'file already exists'
         app.logger.error(message)

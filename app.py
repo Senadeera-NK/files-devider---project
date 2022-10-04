@@ -44,7 +44,6 @@ def upload_result():
 
       #getting the path of current folder
       folder_path = os.path.abspath(os.getcwd())
-
       # checking if that named file already in the folder
       file_exist = os.path.exists(folder_path+'\\static\\files\\'+filename)
 
@@ -63,9 +62,15 @@ def upload_result():
         message = 'file already exists'
         app.logger.error(message)
 
+
     # getting the names on the uploaded files as a list
     uploaded_files = os.listdir('static/files/')
     return render_template('upload.html', uploaded_files=uploaded_files)
+
+@app.route('/delete_uploaded_files')
+def delete_file():
+  app.logger.info('delete file')
+  return redirect('upload.html')
 
 
 if __name__ == "__main__":

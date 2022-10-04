@@ -17,11 +17,16 @@
   <form action="/upload result" method="POST" enctype="multipart/form-data">
     <input type="file" name="file" id="media"/>
     <input type="button" value="upload" onclick="move()">
-    <input type="submit" value="done">
+    <input type="submit" name="done" value="done">
   </form>
   <ul id="file_names_list">
     {% for uploaded_file in uploaded_files %}
-      <li>{{ uploaded_file }} <input type="reset" value="delete"></li>
+      <li>
+        {{ uploaded_file }}
+        <a href="/delete_uploaded_files">
+          <input type="submit" name="submit_button" value="delete">
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </body>

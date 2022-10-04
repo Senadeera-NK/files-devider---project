@@ -23,12 +23,14 @@ def upload():
   # checking if the uploaded files' folder is empty
   files_len = len(uploaded_files)
   # if not empty
-  if not files_len:
-    files = glob.glob('/static/files/*')
+  if  files_len != 0:
+    dir_path = 'static/files'
     #clearing all the existing files for a new session
-    for f in files:
+    filelist = glob.glob(os.path.join(dir_path, "*"))
+    for f in filelist:
       os.remove(f)
   return render_template('upload.html')
+
 
 @app.route('/upload result', methods=['GET', 'POST'])
 def upload_result():

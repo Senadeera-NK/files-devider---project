@@ -35,7 +35,7 @@ def upload():
 @app.route('/upload result', methods=['GET', 'POST'])
 def upload_result():
   if request.method == 'POST':
-    files = request.files.getlist('file')
+    files = request.files.getlist('file[]')
     for f in files:
       # checking if the file's extension is allowed
       if not allowed_files(f.filename):

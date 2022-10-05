@@ -35,7 +35,7 @@ def upload():
 @app.route('/upload result', methods=['GET', 'POST'])
 def upload_result():
   if request.method == 'POST':
-    files = request.files.getlist('file[]')
+    files = request.files.getlist('files[]')
     for f in files:
       # checking if the file's extension is allowed
       if not allowed_files(f.filename):
@@ -47,7 +47,7 @@ def upload_result():
         folder_path = os.path.abspath(os.getcwd())
         # checking if that named file already in the folder
         file_exist = os.path.exists(folder_path+'\\static\\files\\'+filename)
-
+        app.logger.info(file_exist)
         if  file_exist != True:
           f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 

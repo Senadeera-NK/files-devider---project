@@ -35,32 +35,33 @@ def upload():
 @app.route('/upload result', methods=['GET', 'POST'])
 def upload_result():
   if request.method == 'POST':
-    f = request.files['file']
-    # checking if the file's extension is allowed
-    if not allowed_files(f.filename):
-      app.logger.error('not a file with an allowed extension')
-    else:
-      filename = secure_filename(f.filename)
-
-      #getting the path of current folder
-      folder_path = os.path.abspath(os.getcwd())
-      # checking if that named file already in the folder
-      file_exist = os.path.exists(folder_path+'\\static\\files\\'+filename)
-
-      if  file_exist != True:
-        f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
-        # checking if the file uploaded successfully in folder
-        file_uploaded = os.path.exists(folder_path+'\\static\\files\\'+filename)
-
-        if file_uploaded != True:
-          message = 'file uploading failed'
-        else:
-          message = 'file uploaded successfully'
-        app.logger.info(message)
+    files = request.files.getlist('file')
+    for f in files:
+      # checking if the file's extension is allowed
+      if not allowed_files(f.filename):
+        app.logger.error('not a file with an allowed extension')
       else:
-        message = 'file already exists'
-        app.logger.error(message)
+        filename = secure_filename(f.filename)
+
+        #getting the path of current folder
+        folder_path = os.path.abspath(os.getcwd())
+        # checking if that named file already in the folder
+        file_exist = os.path.exists(folder_path+'\\static\\files\\'+filename)
+
+        if  file_exist != True:
+          f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+          # checking if the file uploaded successfully in folder
+          file_uploaded = os.path.exists(folder_path+'\\static\\files\\'+filename)
+
+          if file_uploaded != True:
+            message = 'file uploading failed'
+          else:
+            message = 'file uploaded successfully'
+          app.logger.info(message)
+        else:
+          message = 'file already exists'
+          app.logger.error(message)
 
 
     # getting the names on the uploaded files as a list

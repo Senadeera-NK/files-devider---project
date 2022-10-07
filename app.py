@@ -63,14 +63,15 @@ def upload_result():
           message = 'file already exists'
           app.logger.error(message)
 
+
     # getting the names on the uploaded files as a list
     uploaded_files = os.listdir('static/files/')
     return render_template('upload.html', uploaded_files=uploaded_files)
 
 
-@app.route('/delete_uploaded_files')
-def delete_file():
-  app.logger.info('delete file')
+
+def delete_file(filename):
+  app.logger.info('delete file '+filename)
   return redirect('upload.html')
 
 

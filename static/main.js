@@ -21,7 +21,7 @@ function move() {
 
 // for delete onclick function
 function delete_file(e){
-  var parent = $(this).closest('#list_item');
-  var id = parent.find("#filename").val();
-  console.log(id)
+  //getting the parent element's text(<li> text)
+  var selected_filename = e.parentElement.innerText;
+  console.log(selected_filename)
 }

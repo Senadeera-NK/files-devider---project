@@ -24,9 +24,7 @@
     {% for uploaded_file in uploaded_files %}
       <li>
         {{ uploaded_file }}
-        <a href="#" id="delete_btn">
-          <button class="delete-btn">delete</button>
-        </a>
+        <input type="reset" value="delete" onclick="delete_file()">
       </li>
     {% endfor %}
   </ul>

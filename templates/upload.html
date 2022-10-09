@@ -22,9 +22,9 @@
   </form>
   <ul id="file_names_list">
     {% for uploaded_file in uploaded_files %}
-      <li>
-        {{ uploaded_file }}
-        <input type="reset" value="delete" onclick="delete_file()">
+      <li id="list_item">
+        <div id="filename" value={{upload_file}}>{{ uploaded_file }}</div>
+        <input type="reset" value="delete" onclick="delete_file(this)">
       </li>
     {% endfor %}
   </ul>

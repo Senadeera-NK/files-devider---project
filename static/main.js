@@ -20,6 +20,8 @@ function move() {
 }
 
 // for delete onclick function
-function delete_file(){
-  console.log('delete this file');
+function delete_file(e){
+  var parent = $(this).closest('#list_item');
+  var id = parent.find("#filename").val();
+  console.log(id)
 }

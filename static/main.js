@@ -24,4 +24,20 @@ function delete_file(e){
   //getting the parent element's text(<li> text)
   var selected_filename = e.parentElement.innerText;
   console.log(selected_filename)
+  
+  //removing the chosen from the UI
+  e.parentElement.innerText = '';
+
+  // //pasing the js variables to a dictionary
+  // const dict_values = {selected_filename}
+
+  // //stringfy conerts a javascript object/values to a JSON string
+  // const json_string = JSON.stringify(dict_values)
+
+  // $.ajax({
+  //   url:'/upload result',
+  //   type:"POST",
+  //   contentType:"application/json",
+  //   data: JSON.stringify(json_string)
+  // });
 }

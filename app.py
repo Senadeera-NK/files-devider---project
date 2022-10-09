@@ -69,10 +69,9 @@ def upload_result():
     return render_template('upload.html', uploaded_files=uploaded_files)
 
 
-
-def delete_file(filename):
-  app.logger.info('delete file '+filename)
-  return redirect('upload.html')
+def delete_file():
+  filename = request.get_json()
+  print(filename)
 
 
 if __name__ == "__main__":

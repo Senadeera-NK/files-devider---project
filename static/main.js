@@ -20,13 +20,8 @@ function move() {
 }
 
 // for delete onclick function
-$(function() {
-  $('a#delete_btn').on('click', function(e) {
-    e.preventDefault()
-    $.getJSON('/upload result',
-        function(data) {
-      //do nothing
-    });
-    return false;
-  });
-});
+function delete_file(){
+  litext= document.getElementsByTagName("li").innerHTML;
+  console.log(litext);
+  console.log('delete this file');
+}

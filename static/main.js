@@ -21,7 +21,5 @@ function move() {
 
 // for delete onclick function
 function delete_file(){
-  litext= document.getElementsByTagName("li").innerHTML;
-  console.log(litext);
   console.log('delete this file');
 }

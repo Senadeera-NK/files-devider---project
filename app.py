@@ -68,10 +68,23 @@ def upload_result():
     uploaded_files = os.listdir('static/files/')
     return render_template('upload.html', uploaded_files=uploaded_files)
 
-@app.route('/ProcessFileNameInfo/<string:selected_filename>', methods=['POST'])
-def delete_file(selected_filename):
-  filename = json.loads(selected_filename)
-  print(filename)
+
+
+# deleting selected files form 'files' folder
+@app.route('/ProcessSelectedfile/<string:selectedfile>', methods=['POST'])
+def delete_file(selectedfile):
+  selectedfile = json.loads(selectedfile)
+  file_name = selectedfile
+  print()
+  print(file_name)
+  print()
+
+  folder_path = 'static/files'
+  fileslist = glob.glob(os.path.join(folder_path, "*"))
+  for f in fileslist:
+    print()
+    print(f)
+    print()
   return('/')
 
 

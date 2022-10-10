@@ -22,13 +22,13 @@ function move() {
 // for delete onclick function
 function delete_file(e){
   //getting the parent element's text(<li> text)
-  let selected_filename = e.parentElement.innerText;
-  console.log(selected_filename)
+  let selectedfile = e.parentElement.innerText;
+  console.log(selectedfile)
 
   //removing the chosen from the UI
   e.parentElement.innerText = '';
 
   const request = new XMLHttpRequest();
-  request.open('POST', `/ProcessFilenameInfo/${JSON.stringify(selected_filename)}`)
+  request.open('POST', `/ProcessSelectedfile/${JSON.stringify(selectedfile)}`)
   request.send();
 }

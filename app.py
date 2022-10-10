@@ -68,10 +68,11 @@ def upload_result():
     uploaded_files = os.listdir('static/files/')
     return render_template('upload.html', uploaded_files=uploaded_files)
 
-
-def delete_file():
-  filename = request.get_json()
+@app.route('/ProcessFileNameInfo/<string:selected_filename>', methods=['POST'])
+def delete_file(selected_filename):
+  filename = json.loads(selected_filename)
   print(filename)
+  return('/')
 
 
 if __name__ == "__main__":

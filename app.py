@@ -82,9 +82,11 @@ def delete_file(selectedfile):
   folder_path = 'static/files'
   fileslist = glob.glob(os.path.join(folder_path, "*"))
   for f in fileslist:
-    print()
-    print(f)
-    print()
+    if file_name in f:
+      print()
+      print(file_name)
+      print()
+      os.remove(f)
   return('/')
 
 

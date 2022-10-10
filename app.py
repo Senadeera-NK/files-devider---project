@@ -73,12 +73,11 @@ def upload_result():
 # deleting selected files form 'files' folder
 @app.route('/ProcessSelectedfile/<string:selectedfile>', methods=['POST'])
 def delete_file(selectedfile):
+  # loads from the js file
   selectedfile = json.loads(selectedfile)
   file_name = selectedfile
-  print()
-  print(file_name)
-  print()
 
+  # deleting the file
   os.remove('static/files/'+file_name)
   return('/')
 

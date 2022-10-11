@@ -18,7 +18,7 @@
   <form action="/upload result" method="POST" enctype="multipart/form-data">
     <input type="file" name="files[]" multiple="true" id="media"/>
     <input type="button" value="upload" onclick="move()">
-    <input type="submit" name="done_btn" value="done">
+    <input type="submit" name="submit_button" value="done">
   </form>
   <ul id="file_names_list">
     {% for uploaded_file in uploaded_files %}
@@ -31,8 +31,8 @@
 
   <div class="page_toggle_buttons">
     <ul>
-      <li id="left_btn"><input type="button" value="back" onclick="location.href='start.html';"></li>
-      <li id="right_btn"><input type="button" value="next" onclick="location.href='folders choice.html';"></li>
+      <li id="left_btn"><input type="submit" name="submit_button" value="back" onclick="location.href='start.html';"></li>
+      <li id="right_btn"><input type="submit" name="submit_button" value="next" onclick="location.href='folders choice.html';"></li>
     </ul>
   </div>
 </body>

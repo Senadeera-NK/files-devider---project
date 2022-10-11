@@ -22,9 +22,22 @@
 }
 
 /* next and back buttons lists */
+.page_toggle_buttons{
+  bottom: 10px;
+}
 .page_toggle_buttons ul{
-  
+  list-style-type: none;
+  overflow: hidden;
 }
 .page_toggle_buttons li{
-
+  float: left;
+  padding-left: 85%;
+  padding-bottom: 0;
+}
+#left_btn{
+  padding-left: 0rem;
+}
+#right_btn{
+  padding-top: 0%;
+  padding-right: 0rem;
 }

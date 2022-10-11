@@ -15,7 +15,16 @@
   color: white;
 }
 
+/* UI files name lists */
 #file_names_list{
   list-style-type: none;
   color: rgb(23, 61, 101);
+}
+
+/* next and back buttons lists */
+.page_toggle_buttons ul{
+  
+}
+.page_toggle_buttons li{
+
 }

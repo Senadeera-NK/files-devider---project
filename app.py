@@ -97,5 +97,11 @@ def delete_file(selectedfile):
 
 
 
+# folders choices page's functions
+# @app.route('/folders choice')
+# def folders_choice():
+  
+
+
 if __name__ == "__main__":
   app.run(debug=True)

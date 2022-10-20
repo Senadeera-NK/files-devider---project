@@ -32,13 +32,3 @@ function delete_file(e){
   request.open('POST', `/ProcessSelectedfile/${JSON.stringify(selectedfile)}`)
   request.send();
 }
-
-//function to load from upload page to next page
-function from_upload_page_next(){
-  window.location.href = "templates/folders choice.html";
-}
-
-//function to load from upload page to back page
-function from_upload_page_back(){
-  window.location.href = "templates/start.html";
-}

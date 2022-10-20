@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../static/main.css">
+  <!-- for buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha256-/ykJw/wDxMa0AQhHDYfuMEwVb4JHMx9h4jD4XvHqVzU=" crossorigin="anonymous" />
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="../static/main.js"></script>
   <title>upload files</title>
@@ -31,8 +34,10 @@
 
   <div class="page_toggle_buttons">
     <ul>
-      <li id="left_btn"><input type="submit" name="submit_button" value="back" onclick="location.href='start.html';"></li>
-      <li id="right_btn"><input type="submit" name="submit_button" value="next" onclick="location.href='folders choice.html';"></li>
+      <!-- <li id="left_btn"><input type="button" value="back" onclick="location.href='start.html';"></li>
+      <li id="right_btn"><input type="button" value="next" onclick="location.href='folders choice.html';"></li> -->
+      <li id="left_btn" class="btn btn-primary"><a href="{{url_for('start')}}"></li>
+      <li id="right_btn" class="btn btn-primary"><a href="{{url_for('folders choice')}}"></li>
     </ul>
   </div>
 </body>

@@ -71,16 +71,16 @@ def upload_result():
       print()
       uploaded_files = os.listdir('static/files/')
       return render_template('upload.html', uploaded_files=uploaded_files)
-    elif request.form('submit_button') == 'next':
-      print()
-      print('next')
-      print()
-      return redirect(url_for('folders choice.html'))
-    elif request.form('submit_button') == 'back':
-      print()
-      print('back')
-      print()
-      return redirect(url_for('start.html'))
+    # elif request.form('submit_button') == 'next':
+    #   print()
+    #   print('next')
+    #   print()
+    #   return redirect(url_for('folders choice.html'))
+    # elif request.form('submit_button') == 'back':
+    #   print()
+    #   print('back')
+    #   print()
+    #   return redirect(url_for('start.html'))
 
 
 

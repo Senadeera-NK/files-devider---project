@@ -77,9 +77,8 @@ def next_page():
   if folder_store_length != 0:
     return render_template('folders choice.html')
   else:
-    print()
-    print('please input some files')
-    print()
+    app.logger.error('please input some files')
+    return render_template('error.html', error='please input some files')
 
 # getting into back page from upload.html page
 @app.route('/back_page')

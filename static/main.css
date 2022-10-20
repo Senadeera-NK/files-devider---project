@@ -21,10 +21,10 @@
   color: rgb(23, 61, 101);
 }
 #file_names_list ul:hover{
-  cursor: pointer;
+  cursor: default;
 }
 #file_names_list li:hover{
-  cursor: pointer;
+  cursor: default;
 }
 
 /* next and back buttons lists */

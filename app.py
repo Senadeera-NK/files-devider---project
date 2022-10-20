@@ -66,12 +66,21 @@ def upload_result():
 
 
       # getting the names on the uploaded files as a list
+      print()
+      print('checking the printing')
+      print()
       uploaded_files = os.listdir('static/files/')
       return render_template('upload.html', uploaded_files=uploaded_files)
-    elif request.form['submit_button'] == 'next':
-      return render_template('folders choice.html')
-    elif request.form['submit_button'] == 'back':
-      return render_template('start.html')
+    elif request.form('submit_button') == 'next':
+      print()
+      print('next')
+      print()
+      return redirect(url_for('folders choice.html'))
+    elif request.form('submit_button') == 'back':
+      print()
+      print('back')
+      print()
+      return redirect(url_for('start.html'))
 
 
 

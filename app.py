@@ -82,6 +82,14 @@ def upload_result():
     #   print()
     #   return redirect(url_for('start.html'))
 
+@app.route('/next_page')
+def next_page():
+  return render_template('folders choice.html')
+
+@app.route('/back_page')
+def back_page():
+  return render_template('start.html')
+
 
 
 # deleting selected files form 'files' folder

@@ -69,9 +69,9 @@ def upload_result():
       uploaded_files = os.listdir('static/files/')
       return render_template('upload.html', uploaded_files=uploaded_files)
     elif request.form['submit_button'] == 'next':
-      return render_template('folders choice.html', uploaded_files='')
+      return render_template('folders choice.html')
     elif request.form['submit_button'] == 'back':
-      return render_template('start.html', uploaded_files='')
+      return render_template('start.html')
 
 
 

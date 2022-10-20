@@ -20,7 +20,10 @@
   list-style-type: none;
   color: rgb(23, 61, 101);
 }
-#file_names_list ul{
+#file_names_list ul:hover{
+  cursor: pointer;
+}
+#file_names_list li:hover{
   cursor: pointer;
 }
 

@@ -35,62 +35,56 @@ def upload():
 @app.route('/upload result', methods=['GET', 'POST'])
 def upload_result():
   if request.method == 'POST':
-    if request.form['submit_button'] == 'done':
-      files = request.files.getlist('files[]')
-      for f in files:
-        # checking if the file's extension is allowed
-        if not allowed_files(f.filename):
-          app.logger.error('not a file with an allowed extension')
-        else:
-          filename = secure_filename(f.filename)
+    files = request.files.getlist('files[]')
+    for f in files:
+      # checking if the file's extension is allowed
+      if not allowed_files(f.filename):
+        app.logger.error('not a file with an allowed extension')
+      else:
+        filename = secure_filename(f.filename)
 
-          #getting the path of current folder
-          folder_path = os.path.abspath(os.getcwd())
-          # checking if that named file already in the folder
-          file_exist = os.path.exists(folder_path+'\\static\\files\\'+filename)
+        #getting the path of current folder
+        folder_path = os.path.abspath(os.getcwd())
+        # checking if that named file already in the folder
+        file_exist = os.path.exists(folder_path+'\\static\\files\\'+filename)
 
-          if  file_exist != True:
-            f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        if  file_exist != True:
+          f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-            # checking if the file uploaded successfully in folder
-            file_uploaded = os.path.exists(folder_path+'\\static\\files\\'+filename)
+          # checking if the file uploaded successfully in folder
+          file_uploaded = os.path.exists(folder_path+'\\static\\files\\'+filename)
 
-            if file_uploaded != True:
-              message = 'file uploading failed'
-            else:
-              message = 'file uploaded successfully'
-            app.logger.info(message)
+          if file_uploaded != True:
+            message = 'file uploading failed'
           else:
-            message = 'file already exists'
-            app.logger.error(message)
+            message = 'file uploaded successfully'
+          app.logger.info(message)
+        else:
+          message = 'file already exists'
+          app.logger.error(message)
 
 
-      # getting the names on the uploaded files as a list
-      print()
-      print('checking the printing')
-      print()
-      uploaded_files = os.listdir('static/files/')
-      return render_template('upload.html', uploaded_files=uploaded_files)
-    # elif request.form('submit_button') == 'next':
-    #   print()
-    #   print('next')
-    #   print()
-    #   return redirect(url_for('folders choice.html'))
-    # elif request.form('submit_button') == 'back':
-    #   print()
-    #   print('back')
-    #   print()
-    #   return redirect(url_for('start.html'))
+    # getting the names on the uploaded files as a list
+    uploaded_files = os.listdir('static/files/')
+    return render_template('upload.html', uploaded_files=uploaded_files)
 
+# getting into next page from upload.html page
 @app.route('/next_page')
 def next_page():
-  return render_template('folders choice.html')
+  # checking if the files are chosen before getting to next
+  uploaded_files = os.listdir('static/files/')
+  folder_store_length = len(uploaded_files)
+  if folder_store_length != 0:
+    return render_template('folders choice.html')
+  else:
+    print()
+    print('please input some files')
+    print()
 
+# getting into back page from upload.html page
 @app.route('/back_page')
 def back_page():
   return render_template('start.html')
-
-
 
 # deleting selected files form 'files' folder
 @app.route('/ProcessSelectedfile/<string:selectedfile>', methods=['POST'])

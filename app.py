@@ -63,7 +63,6 @@ def upload_result():
           message = 'file already exists'
           app.logger.error(message)
 
-
     # getting the names on the uploaded files as a list
     uploaded_files = os.listdir('static/files/')
     return render_template('upload.html', uploaded_files=uploaded_files)
@@ -95,6 +94,7 @@ def delete_file(selectedfile):
   # deleting the file
   os.remove('static/files/'+file_name)
   return('/')
+
 
 
 if __name__ == "__main__":

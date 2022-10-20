@@ -20,6 +20,9 @@
   list-style-type: none;
   color: rgb(23, 61, 101);
 }
+#file_names_list ul{
+  cursor: pointer;
+}
 
 /* next and back buttons lists */
 .page_toggle_buttons{
@@ -33,6 +36,14 @@
   float: left;
   padding-left: 85%;
   padding-bottom: 0;
+}
+.page_toggle_buttons a{
+  text-decoration: none;
+  color:black;
+}
+.page_toggle_buttons a:hover{
+  text-decoration: none;
+  color:black;
 }
 #left_btn{
   padding-left: 0rem;
